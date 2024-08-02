@@ -1,0 +1,30 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "@popperjs/core": "^2.11.6",
+        "@vitejs/plugin-vue": "^4.6.2",
+        "axios": "^1.6.4",
+        "bootstrap": "^5.2.3",
+        "laravel-vite-plugin": "^1.0.0",
+        "sass": "^1.56.1",
+        "vite": "^5.0.0",
+        "vue": "^3.4.35"
+    },
+    "dependencies": {
+        "@tinymce/tinymce-vue": "^5.1.1",
+        "@vueup/vue-quill": "^1.0.0-beta.11",
+        "tinymce": "^7.2.1",
+        "valid-url": "^1.0.9",
+        "vue-loader": "^17.4.2",
+        "vue-quill-editor": "^3.0.6",
+        "vue-router": "^4.4.0",
+        "vue-wysiwyg": "^1.7.2",
+        "vuex": "^4.1.0",
+        "vuex-persistedstate": "^4.1.0"
+    }
+}
