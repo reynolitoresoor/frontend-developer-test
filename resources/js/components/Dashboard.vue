@@ -92,7 +92,7 @@
                     <div class="modal-footer">
                         <button type="button" id="close" class="btn btn-danger" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary" id="save">{{ processing ? 'Saving' : 'Save' }}</button>
-                        <button v-if="user.type === 'Editor'" id="publish" type="button" @click="publishArticle" class="btn btn-primary">Publish</button>
+                        <button v-if="(user.type === 'Editor' && formData.status === 'inactive')" id="publish" type="button" @click="publishArticle" class="btn btn-primary">Publish</button>
                     </div>
 
                     </div>
@@ -168,9 +168,10 @@ export default {
                     formData.append('writer',2);
                 }
 
-                let content = JSON.stringify(this.formData.content.ops);
-                let data = JSON.parse(content);
-                formData.append('content', data[0].insert);
+                // let content = JSON.stringify(this.formData.content.ops);
+                // let data = JSON.parse(content);
+                //formData.append('content', data[0].insert);
+                formData.append('content', this.formData.content.ops);
 
                 if(this.formData.id) {
                     const response = await axios.post(`/api/articles/${this.formData.id}`, formData, {
@@ -226,7 +227,7 @@ export default {
                     self.formData.date = data.date
                     self.formData.company = data.company
                     self.formData.content = data.content
-                    
+                    self.formData.status = data.status
                 })
                 .catch(function (error) {
                     console.log(error);
